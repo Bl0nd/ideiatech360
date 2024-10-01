@@ -1,0 +1,624 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Pacifico&display=swap');
+
+body {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+img {
+    width: 100%;
+}
+
+header {
+    background: #f2bc79;
+}
+
+.site {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header>div {
+    display: flex;
+}
+
+header>div div:nth-child(2) {
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+header h1 {
+    width: 220px;
+    height: 80px;
+    background: url(../img/logoLight.svg) no-repeat;
+    text-indent: -9999px;
+    margin: 20px;
+}
+
+/* #region rede social */
+.redeSocial {
+    background: #025159;
+    display: flex;
+    border-radius: 0 0 0 10px;
+    align-items: center;
+}
+
+.redeSocial ul {
+    display: flex;
+}
+
+.redeSocial ul li {
+    margin: 0 10px;
+    background: #fff;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.redeSocial ul li:hover {
+    background: #011826;
+}
+
+.redeSocial ul li a {
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
+
+.redeSocial ul li:nth-child(1) a {
+    background: url(../img/facebook.png) no-repeat;
+    background-size: cover;
+}
+
+.redeSocial ul li:nth-child(2) a {
+    background: url(../img/instagram.png) no-repeat;
+    background-size: cover;
+}
+
+.redeSocial ul li:nth-child(3) a {
+    background: url(../img/linkedin.png) no-repeat;
+    background-size: cover;
+}
+
+.redeSocial>a {
+    margin-left: 54%;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.redeSocial>a:hover {
+    color: #011826;
+}
+
+.redeSocial>a::before {
+    content: '';
+    position: absolute;
+    margin-left: -24px;
+    margin-top: -2px;
+    width: 20px;
+    height: 20px;
+    background: url(../img/user.png) no-repeat;
+    background-size: cover;
+}
+
+/* #endregion rede social */
+
+/*#region menu */
+.menu {
+    flex-grow: 2;
+    align-items: center;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.menu ul li {
+    margin: 0 15px;
+}
+
+.menu a {
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.5625em;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: green;
+}
+
+.ativo {
+    color: #025159 !important;
+}
+
+/*#endregion menu */
+
+/*#region banner */
+.banner {
+    background: url(../img/banner.png);
+    background-size: cover;
+    background-color: rgb(2, 80, 89, 0.5);
+    background-blend-mode: multiply;
+}
+
+.banner>div {
+    display: flex;
+    justify-content: center;
+    padding: 100px 0;
+}
+
+.banner div div {
+    width: 50%;
+}
+
+.banner div div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner div div:nth-child(1) h2 {
+    text-align: center;
+    font-size: 4.5em;
+    color: #fff;
+}
+
+.banner div>div:nth-child(2) {
+    display: flex;
+    justify-content: end;
+}
+
+.banner form {
+    /* 480x400 */
+    width: 80%;
+    background: #f2bc79;
+}
+
+.banner form h2 {
+    font-size: 1.8em;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.banner form div {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.banner form input,
+.banner form textarea {
+    font-size: 1.5em;
+    color: #011826;
+    border: 0;
+    width: 90%;
+    margin: 7.5px 0;
+    padding: 10px 22px;
+    outline: none;
+}
+
+.banner form input:focus,
+.banner form textarea:focus {
+    border: none;
+}
+
+.banner form textarea {
+    height: 40px;
+    resize: none;
+}
+
+.banner form input::placeholder,
+.banner form textarea::placeholder {
+    color: #193d02;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.banner form input[type=submit] {
+    width: 34%;
+    border-radius: 15px;
+    background: #025159;
+    color: #f28b0c;
+    float: right;
+    font-size: 1.5em;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 5px 10px;
+    margin-right: -4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.banner form input[type=submit] :hover {
+    background: #f28b0c;
+    color: #025159;
+}
+
+/*#endregion banner */
+/*#region sobre */
+.sobre {
+    padding: 50px 0;
+}
+
+.sobre>div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sobre>div>div {
+    width: 50%;
+}
+
+.conteudo>div {
+    display: flex;
+}
+
+.conteudo h2 {
+    font-size: 2.5em;
+    margin-left: 50px;
+    margin-bottom: 30px;
+    text-decoration: underline;
+}
+
+.conteudo>div:nth-child(2) {
+    margin-bottom: 130px;
+}
+
+.conteudo div div {
+    padding: 0 30px;
+}
+
+.conteudo p {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+/*#endregion sobre */
+
+/*#region condições especiais */
+.condicoes {
+    background: #011826;
+}
+
+.condicoes div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.condicoes h2 {
+    color: #fff;
+    font-size: 3.75em;
+}
+
+.condicoes a {
+    background: #f28b0c;
+    color: #025159;
+    border-radius: 20px;
+    font-size: 2.25em;
+    padding: 20px 40px;
+    text-decoration: none;
+    transition: background .5s, color 1s;
+}
+
+.condicoes a:hover {
+    background: #025159;
+    color: #f28b0c;
+}
+
+/*#endregion condições especiais */
+
+/*#region serviços */
+.servico {
+    padding: 40px 0;
+}
+
+.servico h2 {
+    text-decoration: underline;
+    font-size: 2.5em;
+    color: #011826;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.servico>div>div {
+    display: flex;
+    justify-content: space-around;
+}
+
+.servico>div>div>div {
+    width: 30%;
+}
+
+.servico>div>div>div div {
+    background: #f2bc79;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.servico>div>div>div:nth-child(1) div:nth-child(1) {
+    border-top-left-radius: 20px;
+}
+
+.servico>div>div>div:nth-child(3) div:nth-child(1) {
+    border-top-right-radius: 20px;
+}
+
+.servico>div>div>div:nth-child(1) div:nth-child(2) {
+    border-bottom-left-radius: 20px;
+}
+
+.servico>div>div>div:nth-child(3) div:nth-child(2) {
+    border-bottom-right-radius: 20px;
+}
+
+.servico h3 {
+    font-size: 1.875em;
+    color: #011826;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.servico p {
+    font-size: 1.125em;
+    color: #025159;
+    text-align: justify;
+    margin-bottom: 30px;
+}
+
+/* GALERIA */
+.galeria {
+    display: flex;
+    padding: 50px 0;
+    background: url(../img/fundoGaleria.png);
+}
+
+.galeria img {
+    margin: 0 40px;
+}
+
+
+/* DEV */
+.dev {
+    padding: 50px 0;
+}
+
+.dev h2 {
+    text-decoration: underline;
+    font-size: 2.5em;
+    color: #011826;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.dev>div>div {
+    display: flex;
+    justify-content: space-around;
+}
+
+.dev>div>div>div {
+    display: flex;
+    justify-content: space-between;
+    background: #025159;
+    width: 33.3333%;
+}
+
+.dev li {
+    margin: 40px 0;
+}
+
+.dev li a {
+    background: #f28b0c;
+    padding: 30px 5px;
+}
+
+.dev li a img {
+    width: 50px;
+}
+
+/*#endregion serviços */
+
+/*#region galeria*/
+.galeria {
+    display: flex;
+    background: url(../img/fundoGaleria.png);
+}
+
+.galeria img {
+    margin: 0 40px;
+}
+
+/*#endregion galeria*/
+
+/*#region dev*/
+.dev {
+    padding: 50px 0;
+}
+
+.dev h2 {
+    text-decoration: underline;
+    font-size: 2.5em;
+    color: #011826;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.dev>div>div {
+    display: flex;
+    justify-content: space-around;
+}
+
+.dev>div>div>div {
+    display: flex;
+    justify-content: space-between;
+    background: #025159;
+    width: 33.3333%;
+}
+
+.dev li {
+    margin: 40px 0;
+}
+
+.dev li a {
+    background: #f28b0c;
+    padding: 30px 5px;
+}
+
+.dev li a img {
+    width: 50px;
+}
+
+/*#endregion dev*/
+/*#region perguntas frequentes*/
+.perguntas {
+    padding: 40px 0;
+    background: #011826;
+}
+
+.perguntas h2 {
+    text-decoration: underline;
+    font-size: 2.5em;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.perguntas div div {
+    width: 66.660%;
+    margin: 0 auto;
+}
+
+details {
+    background: #f2bc79;
+    font-size: 1.125em;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+details>div {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .5s ease-in-out;
+}
+
+details[open]>div {
+    max-height: 350px;
+}
+
+summary {
+    background: #f28b0c;
+    font-size: 1.75em;
+    font-family: "Pacifico", cursive;
+    padding: 20px 20px;
+    border-radius: 20px;
+    list-style: none;
+}
+
+/*#endregion perguntas frequentes*/
+
+/*#region footer*/
+.rodape {
+    text-align: center;
+    color: #fff;
+    font-size: 1.5em;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+}
+
+.rodape>div {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0;
+}
+
+.rodape>div>div {
+    width: 25%;
+    background: #025159;
+    padding: 20px;
+}
+
+.rodape a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.rodape img {
+    width: 80%;
+    margin-bottom: 25%;
+}
+
+.rodape a[href^="https:"] {
+    margin-bottom: 15%;
+    transition: all 0.3s ease;
+}
+
+.rodape a[href^="https:"]:hover {
+    color: #f28b0c;
+}
+
+.rodape a[href^="mailto:"] {
+    color: #f28b0c;
+    transition: color 0.3s ease;
+}
+
+.rodape a[href^="mailto:"]:hover {
+   color: #FFF;
+}
+
+.rodape ul li{
+    margin: 15% 0;
+}
+
+.rodape ul li:nth-child(1){
+    margin-top: 3%;
+}
+
+.rodape ul li:last-child{
+    margin-top: 35%;
+    margin-bottom: 0;    
+}
+
+.rodape ul li:last-child a{
+    color: #f28b0c;   
+}
+
+.rodape h3{
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+}
+
+.mapa iframe{
+    border-radius: 20px;
+    margin-bottom: 15%;
+}
+
+.rodape h4{
+    background-color: #011826;
+    padding: 20px 0;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+}
+/*#endregion footer*/
