@@ -473,17 +473,39 @@ header h1 {
 .dev>div>div>div {
     display: flex;
     justify-content: space-between;
-    background: #025159;
+
     width: 33.3333%;
 }
 
-.dev li {
-    margin: 40px 0;
+.dev>div>div>div>div {
+    background: #80a8ac;
 }
 
-.dev li a {
+.dev h3 {
+    font-size: 1.875em;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.dev h4 {
+    font-family: "Anton", sans-serif;
+    font-size: 1.5625em;
+    margin: 40px auto;
+    text-align: center;
+    width: 150px;
+
+}
+
+.dev li {
+    margin: 8px 0;
     background: #f28b0c;
-    padding: 30px 5px;
+    padding: 20px 5px;
+    border-radius: 15px;
+    transition: background 1s;
+}
+
+.dev li:hover {
+    background: #025159;
 }
 
 .dev li a img {
