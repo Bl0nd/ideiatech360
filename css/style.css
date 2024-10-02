@@ -450,6 +450,42 @@ header h1 {
     margin: 0 40px;
 }
 
+.galeria {
+    .slick-prev {
+        left: -25px;
+    }
+
+    [dir='rtl'] .slick-prev {
+        right: -25px;
+        left: auto;
+    }
+
+    .slick-prev:before {
+        content: '←';
+    }
+
+    [dir='rtl'] .slick-prev:before {
+        content: '→';
+    }
+
+    .slick-next {
+        right: -25px;
+    }
+
+    [dir='rtl'] .slick-next {
+        right: auto;
+        left: -25px;
+    }
+
+    .slick-next:before {
+        content: '→';
+    }
+
+    [dir='rtl'] .slick-next:before {
+        content: '←';
+    }
+}
+
 /*#endregion galeria*/
 
 /*#region dev*/
@@ -473,7 +509,6 @@ header h1 {
 .dev>div>div>div {
     display: flex;
     justify-content: space-between;
-
     width: 33.3333%;
 }
 
@@ -493,7 +528,6 @@ header h1 {
     margin: 40px auto;
     text-align: center;
     width: 150px;
-
 }
 
 .dev li {
@@ -607,40 +641,41 @@ summary {
 }
 
 .rodape a[href^="mailto:"]:hover {
-   color: #FFF;
+    color: #FFF;
 }
 
-.rodape ul li{
+.rodape ul li {
     margin: 15% 0;
 }
 
-.rodape ul li:nth-child(1){
+.rodape ul li:nth-child(1) {
     margin-top: 3%;
 }
 
-.rodape ul li:last-child{
+.rodape ul li:last-child {
     margin-top: 35%;
-    margin-bottom: 0;    
+    margin-bottom: 0;
 }
 
-.rodape ul li:last-child a{
-    color: #f28b0c;   
+.rodape ul li:last-child a {
+    color: #f28b0c;
 }
 
-.rodape h3{
+.rodape h3 {
     font-family: "Anton", sans-serif;
     font-weight: 400;
 }
 
-.mapa iframe{
+.mapa iframe {
     border-radius: 20px;
     margin-bottom: 15%;
 }
 
-.rodape h4{
+.rodape h4 {
     background-color: #011826;
     padding: 20px 0;
     font-family: "Anton", sans-serif;
     font-weight: 400;
 }
+
 /*#endregion footer*/
