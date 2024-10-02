@@ -33,5 +33,13 @@ function EnviarWhats() {
     var email = document.getElementById('emailOrcamento').value;
     var mens = document.getElementById('mensOrcamento').value;
 
-    alert('Nome: ' + nome + '| Fone: ' + fone + '| Email: ' + email + '| Mens: ' + mens);
+    var numWhats = '5511987521436';
+    var quebraDeLinha = '%0A';
+
+    nome = window.encodeURIComponent(nome);
+    fone = window.encodeURIComponent(fone);
+    email = window.encodeURIComponent(email);
+    mens = window.encodeURIComponent(mens);
+
+    window.open("https://wa.me/" + numWhats + "?text=" + site + quebraDeLinha + quebraDeLinha + nome + quebraDeLinha + fone + quebraDeLinha + email + quebraDeLinha + mens);
 };
