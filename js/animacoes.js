@@ -24,5 +24,14 @@ document.getElementById('orcamento').addEventListener('submit', function (evento
 });
 
 function EnviarWhats() {
-    alert("Teste de evento");
+    // alert("Teste de evento");
+    // console.log("Cheguei aqui");
+
+    var site = "*Site Ideia Tech 360 - Orçamento*";
+    var nome = document.getElementById('nomeOrcamento').value;
+    var fone = document.getElementById('foneOrcamento').value;
+    var email = document.getElementById('emailOrcamento').value;
+    var mens = document.getElementById('mensOrcamento').value;
+
+    alert('Nome: ' + nome + '| Fone: ' + fone + '| Email: ' + email + '| Mens: ' + mens);
 };
