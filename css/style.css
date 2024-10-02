@@ -177,7 +177,7 @@ header h1 {
     align-items: center;
 }
 
-.banner div div:nth-child(1) h2 {
+.banner .box1 h2 {
     text-align: center;
     font-size: 4.5em;
     color: #fff;
@@ -216,16 +216,6 @@ header h1 {
     outline: none;
 }
 
-.banner form input:focus,
-.banner form textarea:focus {
-    border: none;
-}
-
-.banner form textarea {
-    height: 40px;
-    resize: none;
-}
-
 .banner form input::placeholder,
 .banner form textarea::placeholder {
     color: #193d02;
@@ -253,6 +243,35 @@ header h1 {
 .banner form input[type=submit] :hover {
     background: #f28b0c;
     color: #025159;
+}
+
+.banner form input:focus,
+.banner form textarea:focus {
+    border: none;
+}
+
+.banner form textarea {
+    height: 40px;
+    resize: none;
+}
+
+.banner {
+
+    .slick-prev:before,
+    .slick-next:before {
+        font-family: 'slick';
+        font-size: 50px;
+        color: #f28b0c;
+    }
+
+    .slick-prev {
+        left: 25px;
+        z-index: 2;
+    }
+
+    .slick-next {
+        right: 45px;
+    }
 }
 
 /*#endregion banner */
@@ -451,38 +470,21 @@ header h1 {
 }
 
 .galeria {
+
+    .slick-prev:before,
+    .slick-next:before {
+        font-family: 'slick';
+        font-size: 50px;
+        color: #f28b0c;
+    }
+
     .slick-prev {
-        left: -25px;
-    }
-
-    [dir='rtl'] .slick-prev {
-        right: -25px;
-        left: auto;
-    }
-
-    .slick-prev:before {
-        content: '←';
-    }
-
-    [dir='rtl'] .slick-prev:before {
-        content: '→';
+        left: 25px;
+        z-index: 2;
     }
 
     .slick-next {
-        right: -25px;
-    }
-
-    [dir='rtl'] .slick-next {
-        right: auto;
-        left: -25px;
-    }
-
-    .slick-next:before {
-        content: '→';
-    }
-
-    [dir='rtl'] .slick-next:before {
-        content: '←';
+        right: 45px;
     }
 }
 
