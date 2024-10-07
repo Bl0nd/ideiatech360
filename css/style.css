@@ -144,7 +144,7 @@ header h1 {
 }
 
 .menu a:hover {
-    color: green;
+    color: #025159;
 }
 
 .ativo {
@@ -206,7 +206,8 @@ header h1 {
 }
 
 .banner form input,
-.banner form textarea {
+.banner form textarea,
+.banner form button {
     font-size: 1.5em;
     color: #011826;
     border: 0;
@@ -224,7 +225,7 @@ header h1 {
     font-style: normal;
 }
 
-.banner form input[type=submit] {
+.banner form button {
     width: 34%;
     border-radius: 15px;
     background: #025159;
@@ -240,7 +241,7 @@ header h1 {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.banner form input[type=submit] :hover {
+.banner form button:hover {
     background: #f28b0c;
     color: #025159;
 }
