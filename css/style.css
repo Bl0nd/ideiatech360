@@ -26,6 +26,7 @@ header {
     background: #f2bc79;
 }
 
+/*#region meunu*/
 .site {
     max-width: 1200px;
     width: 100%;
@@ -50,7 +51,6 @@ header h1 {
     margin: 20px;
 }
 
-/* #region rede social */
 .redeSocial {
     background: #025159;
     display: flex;
@@ -70,15 +70,15 @@ header h1 {
 }
 
 .redeSocial ul li:hover {
-    background: #011826;
+    background: #011826
 }
+
 
 .redeSocial ul li a {
     display: block;
     width: 20px;
     height: 20px;
 }
-
 
 .redeSocial ul li:nth-child(1) a {
     background: url(../img/facebook.png) no-repeat;
@@ -117,12 +117,10 @@ header h1 {
     background-size: cover;
 }
 
-/* #endregion rede social */
 
-/*#region menu */
 .menu {
     flex-grow: 2;
-    align-items: center;
+    align-content: center;
 }
 
 .menu ul {
@@ -151,14 +149,16 @@ header h1 {
     color: #025159 !important;
 }
 
-/*#endregion menu */
+/*#endregion menu*/
 
-/*#region banner */
+/*#region banner*/
+
 .banner {
-    background: url(../img/banner.png);
+    background: url(../img/banner.png) no-repeat;
     background-size: cover;
-    background-color: rgb(2, 80, 89, 0.5);
+    background-color: rgba(2, 80, 89, 0.5);
     background-blend-mode: multiply;
+
 }
 
 .banner>div {
@@ -179,6 +179,7 @@ header h1 {
 
 .banner .box1 h2 {
     text-align: center;
+    /*  Comentar : */
     font-size: 4.5em;
     color: #fff;
 }
@@ -217,35 +218,6 @@ header h1 {
     outline: none;
 }
 
-.banner form input::placeholder,
-.banner form textarea::placeholder {
-    color: #193d02;
-    font-family: "Anton", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.banner form button {
-    width: 40%;
-    border-radius: 15px;
-    background: #025159;
-    color: #f28b0c;
-    float: right;
-    font-size: 1.5em;
-    font-family: "Anton", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    padding: 5px 10px;
-    margin-right: -4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.banner form button:hover {
-    background: #f28b0c;
-    color: #025159;
-}
-
 .banner form input:focus,
 .banner form textarea:focus {
     border: none;
@@ -256,13 +228,43 @@ header h1 {
     resize: none;
 }
 
+.banner form input::placeholder,
+.banner form textarea::placeholder {
+    color: #011826;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.banner form button {
+    width: 34%;
+    border-radius: 15px;
+    background: #025159;
+    color: #f28b0c;
+    float: right;
+    font-size: 1em;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 5px 10px;
+    margin-right: -4px;
+    cursor: pointer;
+
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.banner form button:hover {
+    background: #f28b0c;
+    color: #025159;
+}
+
 .banner {
 
     .slick-prev:before,
     .slick-next:before {
         font-family: 'slick';
         font-size: 50px;
-        color: #f28b0c;
+        color: #fff;
     }
 
     .slick-prev {
@@ -275,9 +277,9 @@ header h1 {
     }
 }
 
-/*#endregion banner */
+/*#endregion banner*/
 
-/*#region sobre */
+/*#region sobre*/
 .sobre {
     padding: 50px 0;
 }
@@ -310,14 +312,16 @@ header h1 {
     padding: 0 30px;
 }
 
+
 .conteudo p {
     font-size: 1.5em;
     text-align: center;
 }
 
-/*#endregion sobre */
+/*#endregion sobre*/
 
-/*#region condições especiais */
+/*#region condicoes*/
+
 .condicoes {
     background: #011826;
 }
@@ -349,9 +353,9 @@ header h1 {
     color: #f28b0c;
 }
 
-/*#endregion condições especiais */
+/*#endregion condicoes*/
 
-/*#region serviços */
+/*#region servico*/
 .servico {
     padding: 40px 0;
 }
@@ -409,57 +413,7 @@ header h1 {
     margin-bottom: 30px;
 }
 
-/* GALERIA */
-.galeria {
-    display: flex;
-    padding: 50px 0;
-    background: url(../img/fundoGaleria.png);
-}
-
-.galeria img {
-    margin: 0 40px;
-}
-
-
-/* DEV */
-.dev {
-    padding: 50px 0;
-}
-
-.dev h2 {
-    text-decoration: underline;
-    font-size: 2.5em;
-    color: #011826;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.dev>div>div {
-    display: flex;
-    justify-content: space-around;
-}
-
-.dev>div>div>div {
-    display: flex;
-    justify-content: space-between;
-    background: #025159;
-    width: 33.3333%;
-}
-
-.dev li {
-    margin: 40px 0;
-}
-
-.dev li a {
-    background: #f28b0c;
-    padding: 30px 5px;
-}
-
-.dev li a img {
-    width: 50px;
-}
-
-/*#endregion serviços */
+/*#endregion servicos*/
 
 /*#region galeria*/
 .galeria {
@@ -488,6 +442,7 @@ header h1 {
     .slick-next {
         right: 45px;
     }
+
 }
 
 /*#endregion galeria*/
@@ -513,6 +468,7 @@ header h1 {
 .dev>div>div>div {
     display: flex;
     justify-content: space-between;
+
     width: 33.3333%;
 }
 
@@ -532,6 +488,7 @@ header h1 {
     margin: 40px auto;
     text-align: center;
     width: 150px;
+
 }
 
 .dev li {
@@ -542,7 +499,7 @@ header h1 {
     transition: background 1s;
 }
 
-.dev li:hover {
+dev li:hover {
     background: #025159;
 }
 
@@ -552,7 +509,8 @@ header h1 {
 
 /*#endregion dev*/
 
-/*#region perguntas frequentes*/
+/*#region perguntas*/
+
 .perguntas {
     padding: 40px 0;
     background: #011826;
@@ -579,25 +537,25 @@ details {
 }
 
 details>div {
-    max-height: 0;
+    height: 0;
     overflow: hidden;
-    transition: max-height .5s ease-in-out;
+    transition: height 0.5s ease-in-out;
 }
 
 details[open]>div {
-    max-height: 350px;
+    height: 200px;
 }
 
 summary {
     background: #f28b0c;
-    font-size: 1.75em;
+    font-size: 1.875em;
     font-family: "Pacifico", cursive;
-    padding: 20px 20px;
+    padding: 20px;
     border-radius: 20px;
     list-style: none;
 }
 
-/*#endregion perguntas frequentes*/
+/*#endregion perguntas*/
 
 /*#region footer*/
 .rodape {
@@ -684,3 +642,186 @@ summary {
 }
 
 /*#endregion footer*/
+
+/* 769 ate 900 */
+@media(max-width: 900px) {
+
+    /* MENU */
+    .menu ul li {
+        margin: 0 1.5%;
+    }
+
+    /* SOBRE */
+    .conteudo>div:nth-child(2) {
+        margin-bottom: 50px;
+    }
+
+    .conteudo p {
+        font-size: .9em;
+        line-height: 1.2em;
+    }
+
+    /* CONDIÇÕES ESPECIAIS */
+    .condicoes h2 {
+        color: #fff;
+        font-size: 2em;
+    }
+
+    /* SERVIÇOS */
+    .servico>div>div {
+        align-items: center;
+    }
+
+    .servico h3 {
+        font-size: 1em;
+    }
+
+    .servico p {
+        font-size: .8em;
+        line-height: 1.2em;
+    }
+
+    /* DEV */
+    .dev>div>div>div {
+        width: 44%;
+    }
+
+    /* RODAPE */
+    .rodape a[href^="mailto:"] {
+        font-size: .7em;
+    }
+
+    .rodape ul li:last-child a {
+        font-size: .8em;
+    }
+
+    .rodape h3 {
+        font-size: .8em;
+    }
+}
+
+/* 361 ate 768 */
+@media(max-width: 768px) {
+    header h1 {
+        width: 140px;
+    }
+
+    .menu {
+        flex-grow: 2;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .menu ul {
+        font-size: .6em;
+    }
+
+    .banner {
+        display: none;
+    }
+
+    /* SOBRE */
+    .sobre>div {
+        justify-content: space-around;
+    }
+
+    .sobre>div>div {
+        width: 40%;
+    }
+
+    .conteudo div div {
+        padding: 0 10px;
+        width: 30%;
+    }
+
+    .conteudo h2 {
+        font-size: 2.2em;
+    }
+
+    .conteudo p {
+        font-size: .5em;
+    }
+
+    /* CONDIÇÕES */
+    .condicoes div {
+        padding: 20px 0;
+    }
+
+    .condicoes a {
+        font-size: 1.2em;
+        padding: 10px 20px;
+    }
+
+    .condicoes h2 {
+        font-size: 1.75em;
+    }
+
+    /* SERVIÇOS */
+    .servico h2 {
+        font-size: 1.8em;
+    }
+
+    .servico p {
+        margin-bottom: 10px;
+        font-size: .8em;
+    }
+
+    /* DEV */
+    .dev h2 {
+        font-size: 1.5em;
+    }
+
+    .dev li {
+        margin: 5px 0;
+        padding: 10px 5px;
+    }
+
+    .dev li a img {
+        width: 40px;
+    }
+
+    .dev h3 {
+        font-size: 1.5em;
+        margin-top: 20px;
+    }
+
+    .dev h4 {
+        font-size: 1.2em;
+        margin: 30px auto;
+        width: 140px;
+    }
+
+    /* PERGUNTAS FREQUENTES */
+    .perguntas h2 {
+        font-size: 2em;
+    }
+
+    summary {
+        font-size: 1.2em;
+        padding: 15px;
+    }
+
+    details {
+        font-size: 1em;
+    }
+
+    /* RODAPE */
+    .rodape h3 {
+        font-size: .6em;
+    }
+
+    .rodape a[href^="mailto:"] {
+        font-size: 0.5em;
+    }
+
+    .rodape h4 {
+        font-size: .8em;
+    }
+}
+
+/* 0 ate 360 */
+@media(max-width: 360px) {
+    .banner {
+        display: none;
+    }
+}

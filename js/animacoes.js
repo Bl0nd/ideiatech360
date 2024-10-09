@@ -16,6 +16,26 @@ $('.galeria').slick({
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
+    responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 3,
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+            }
+        }
+    ]
 });
 
 function EnviarWhats() {
@@ -37,6 +57,6 @@ function EnviarWhats() {
     mens = window.encodeURIComponent(mens);
 
     window.open("https://wa.me/" + numWhats + "?text=" + site + quebraDeLinha + quebraDeLinha + nome + quebraDeLinha + fone + quebraDeLinha + email + quebraDeLinha + mens)
-    
+
     window.open(url, '_blank');
 }
