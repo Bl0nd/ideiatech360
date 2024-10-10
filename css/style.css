@@ -468,7 +468,6 @@ header h1 {
 .dev>div>div>div {
     display: flex;
     justify-content: space-between;
-
     width: 33.3333%;
 }
 
@@ -842,4 +841,62 @@ summary {
         display: flex;
         flex-direction: column;
     }
+
+    /* DEV */
+    .dev li {
+        padding: 15px 5px;
+    }
+
+    .dev li a img {
+        width: 25px;
+    }
+
+    /* PERGUNTAS FREQUENTES */
+    .perguntas h2 {
+        font-size: 2em;
+    }
+
+    summary {
+        font-size: 1em;
+        padding: 8px;
+    }
+
+    /* RODAPE */
+    .rodape {
+        font-size: 1.3em;
+    }
+
+    .rodape>div>div {
+        width: 20%;
+        background: #025159;
+        padding: 20px;
+    }
+
+    .rodape a {
+        padding: 10px;
+        font-size: .8em;
+    }
+
+    .rodape img {
+        width: 100%;
+        margin-bottom: 40%;
+    }
+
+    .rodape a[href^="mailto:"] {
+        font-size: 0.4em;
+        padding: 20px;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+    }
+
+    .rodape ul li:last-child a {
+        font-size: .6em;
+    }
+
+    .rodape h3 {
+        font-size: .4em;
+    }
+
+
 }
