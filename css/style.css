@@ -813,6 +813,19 @@ summary {
 
 /* 0 ate 360 */
 @media(max-width: 360px) {
+    header h1 {
+        width: 40px;
+    }
+
+    .redeSocial ul li a {
+        width: 15px;
+        height: 15px;
+    }
+
+    .menu ul {
+        font-size: .4em;
+    }
+
     .banner {
         display: none;
     }
