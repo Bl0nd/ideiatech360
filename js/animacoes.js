@@ -3,6 +3,7 @@
 new WOW().init();
 
 // BANNER SLICK
+
 $('.banner').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -11,6 +12,7 @@ $('.banner').slick({
 });
 
 // GALERIA SLICK
+
 $('.galeria').slick({
     slidesToShow: 5,
     slidesToScroll: 1,
@@ -59,4 +61,13 @@ function EnviarWhats() {
     window.open("https://wa.me/" + numWhats + "?text=" + site + quebraDeLinha + quebraDeLinha + nome + quebraDeLinha + fone + quebraDeLinha + email + quebraDeLinha + mens)
 
     window.open(url, '_blank');
+}
+
+//Menu Mobile
+document.querySelector(".abrir-menu").onclick = function () {
+    document.documentElement.classList.add("menu-ativo");
+}
+
+document.querySelector(".fechar-menu").onclick = function () {
+    document.documentElement.classList.remove("menu-ativo");
 }
