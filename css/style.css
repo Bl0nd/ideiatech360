@@ -260,6 +260,7 @@ header h1 {
 }
 
 .banner {
+
     .slick-prev:before,
     .slick-next:before {
         font-family: 'slick';
@@ -767,10 +768,40 @@ summary {
     }
 
     .banner {
-        display: none;
+        height: 480px;
+
+        .slide {
+            display: none;
+        }
+
+        .boxForm {
+            width: 90%;
+            position: absolute;
+            right: 0;
+            top: 10%;
+        }
+
+        .boxForm form {
+            width: 90%;
+            height: 380px;
+        }
+
+        form button {
+            width: 40%;
+        }
+
+        form input,
+        .banner form textarea,
+        .banner form button {
+            font-size: 1.1em;
+        }
     }
 
     /* SOBRE */
+    .sobre img {
+        width: 80%;
+    }
+
     .sobre>div {
         flex-direction: column;
     }
@@ -791,8 +822,8 @@ summary {
     }
 
     .conteudo p {
-        font-size: 1.1em;
-        line-height: 1.4em;
+        font-size: 1em;
+        line-height: 1em;
         margin-top: 25px;
     }
 
@@ -896,7 +927,7 @@ summary {
     }
 
     summary {
-        font-size: .8em;
+        font-size: 1.1em;
         padding: 5px;
         border-radius: 10px;
     }

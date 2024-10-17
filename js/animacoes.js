@@ -57,10 +57,17 @@ function EnviarWhats() {
 
     // Expressão regular para validar telefone no formato (XX) XXXXX-XXXX ou (XX) XXXX-XXXX
     const exFone = /^\(\d{2}\) \d{4,5}-\d{4}$/;
+    if (!exFone.test(fone)) {
+        alert('Insira um telefone valido, no formato (XX) XXXXX-XXXX ou (XX) XXXX-XXXX');
+        return false;
+    }
 
     // Expressão regular para validar formato de e-mail
     const exEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
+    if (!exEmail.test(email)) {
+        alert('Insira um email valido');
+        return false;
+    }
 
     if (mens.length < 20) {
         alert('A mensagem deve conter mais de 20 caracteres');
@@ -79,10 +86,7 @@ function EnviarWhats() {
 
     window.open(url, '_blank');
 
-    form.elements['nome'].value = "";
-    form.elements['fone'].value = "";
-    form.elements['email'].value = "";
-    form.elements['mens'].value = "";
+    form.reset();
 }
 
 //Menu Mobile
