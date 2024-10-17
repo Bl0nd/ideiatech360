@@ -26,7 +26,7 @@ header {
     background: #f2bc79;
 }
 
-/*#region meunu*/
+/*#region menu*/
 .site {
     max-width: 1200px;
     width: 100%;
@@ -158,47 +158,48 @@ header h1 {
     background-size: cover;
     background-color: rgba(2, 80, 89, 0.5);
     background-blend-mode: multiply;
+    position: relative;
+    height: 700px;
+}
+
+.box1 {
+    margin-top: 250px;
 
 }
 
-.banner>div {
-    display: flex;
-    justify-content: center;
-    padding: 100px 0;
-}
-
-.banner div div {
-    width: 50%;
-}
-
-.banner div div:nth-child(1) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.banner .box1 h2 {
-    text-align: center;
-    /*  Comentar : */
+.box1 h2 {
     font-size: 4.5em;
     color: #fff;
+    left: 800px;
 }
 
-.banner div>div:nth-child(2) {
-    display: flex;
-    justify-content: end;
+.box1 a {
+    text-align: center;
+    font-size: 2em;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 40px;
+}
+
+.boxForm {
+    position: absolute;
+    right: 20%;
+    top: 20%;
 }
 
 .banner form {
-    /* 480x400 */
     width: 80%;
     background: #f2bc79;
+    right: 25%;
+    top: 25%;
+    height: 400px;
 }
 
-.banner form h2 {
+.boxForm h2 {
     font-size: 1.8em;
     text-align: center;
     margin: 20px 0;
+    padding: 20px;
 }
 
 .banner form div {
@@ -259,7 +260,6 @@ header h1 {
 }
 
 .banner {
-
     .slick-prev:before,
     .slick-next:before {
         font-family: 'slick';
@@ -779,6 +779,7 @@ summary {
         width: 80%;
         margin: 0 auto;
     }
+
     .conteudo h2 {
         margin-left: 0;
         text-align: center;

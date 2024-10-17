@@ -4,7 +4,7 @@ new WOW().init();
 
 // BANNER SLICK
 
-$('.banner').slick({
+$('.slide').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
@@ -50,6 +50,23 @@ function EnviarWhats() {
     var email = form.elements['email'].value;
     var mens = form.elements['mens'].value;
 
+    if (nome === '') {
+        alert('Por favor, insira seu nome: ');
+        return false;
+    }
+
+    // Expressão regular para validar telefone no formato (XX) XXXXX-XXXX ou (XX) XXXX-XXXX
+    const exFone = /^\(\d{2}\) \d{4,5}-\d{4}$/;
+
+    // Expressão regular para validar formato de e-mail
+    const exEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+    if (mens.length < 20) {
+        alert('A mensagem deve conter mais de 20 caracteres');
+        return false;
+    }
+
     var numWhats = '5511987521436';
     var quebraDeLinha = '%0A';
 
@@ -61,6 +78,11 @@ function EnviarWhats() {
     window.open("https://wa.me/" + numWhats + "?text=" + site + quebraDeLinha + quebraDeLinha + nome + quebraDeLinha + fone + quebraDeLinha + email + quebraDeLinha + mens)
 
     window.open(url, '_blank');
+
+    form.elements['nome'].value = "";
+    form.elements['fone'].value = "";
+    form.elements['email'].value = "";
+    form.elements['mens'].value = "";
 }
 
 //Menu Mobile
