@@ -97,3 +97,14 @@ document.querySelector(".abrir-menu").onclick = function () {
 document.querySelector(".fechar-menu").onclick = function () {
     document.documentElement.classList.remove("menu-ativo");
 }
+
+//MENU FIXO
+window.onscroll = function () {
+    var top = document.documentElement.scrollTop;
+    if (top > 900) {
+        document.getElementById("topo-fixo").classList.add('menu-fixo');
+    }
+    else {
+        document.getElementById("topo-fixo").classList.remove('menu-fixo');
+    }
+}

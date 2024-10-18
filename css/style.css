@@ -26,6 +26,14 @@ header {
     background: #f2bc79;
 }
 
+.menu-fixo {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    margin: 0 auto;
+}
+
 /*#region menu*/
 .site {
     max-width: 1200px;
