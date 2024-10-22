@@ -1023,7 +1023,7 @@ summary {
 /* 0 ate 360 */
 @media(max-width: 360px) {
     header h1 {
-        width: 40px;
+        padding: 10px;
     }
 
     .redeSocial ul li a {
@@ -1045,7 +1045,7 @@ summary {
     }
 
     .conteudo h2 {
-        font-size: 1.5em;
+        font-size: 1.9em;
     }
 
     /* CONDIÇÕES ESPECIAIS */
@@ -1089,7 +1089,7 @@ summary {
     }
 
     .rodape>div>div {
-        width: 20%;
+        /* width: 20%; */
         background: #025159;
         padding: 20px;
     }
@@ -1100,12 +1100,12 @@ summary {
     }
 
     .rodape img {
-        width: 100%;
+        width: 80%;
         margin-bottom: 40%;
     }
 
     .rodape a[href^="mailto:"] {
-        font-size: 0.4em;
+        font-size: 0.6em;
         padding: 20px;
         display: flex;
         flex-direction: row-reverse;
@@ -1116,8 +1116,12 @@ summary {
         font-size: .6em;
     }
 
+    .mapa {
+        width: 90%;
+    }
+
     .rodape h3 {
-        font-size: .4em;
+        font-size: .6em;
     }
 
 
