@@ -1,3 +1,23 @@
+<?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'vedors/email/Exception.php';
+require 'vedors/email/PHPMailer.php';
+require 'vedors/email/SMTP.php';
+
+if (isset($_POST['nome'])) {
+    $assunto = 'Ideia Tech 360';
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $fone = $_POST['fone'];
+    $mens = $_POST['mens'];
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -27,71 +47,32 @@
 
     <main>
 
-        <!-- Banner -->
-
-        <section class="banner">
-
-
-            <!-- SLIDE -->
-
-            <div class="slide">
-
-                <div>
-                    <div class="site">
-                        <div class="box1">
-                            <h2>Ideia tech <br> 360 </h2>
-                        </div>
-                    </div>
-                </div>
-
-                 <div>
-                    <div class="site">
-                        <div class="box1">
-                            <h2>banner <br> BANNER </h2>
-                        </div>
-                    </div>
-                </div> 
-
-            </div>
-
-            <div class="boxform">
-                <form name="orcamento" method="post" class="animate__animated animate__wobble animate__delay-2s">
-                    <h2>Faça seu Orçamento</h2>
-                    <div>
-                        <input type="text" name="nome" placeholder="Nome: " required>
-                    </div>
-                    <div>
-                        <input type="tel" name="fone" placeholder="Telefone: " required>
-                    </div>
-                    <div>
-                        <input type="email" name="email" placeholder="E-mail: " required>
-                    </div>
-                    <div>
-                        <textarea name="mens" placeholder="Mensagem: " cols="30" rows="10"></textarea>
-                    </div>
-                    <div>
-                        <button onclick="EnviarWhats()">Orçamento</button>
-                    </div>
-                </form>
-            </div>
+        <!-- mapa -->
+        <section class="map-contato">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.033985270784!2d-46.43194172309075!3d-23.49528535107992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce63dd09800149%3A0x4f436ed77615106c!2sAvenida%20Marechal%20Tito%2C%201500%20-%20S%C3%A3o%20Miguel%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1727804158332!5m2!1spt-BR!2sbr"
+                width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
 
-        <!-- Sobre -->
-        <?php require_once('conteudo/sobre_cont.php'); ?>
+        <section class="site formulario">
+            <h2>Formulário de contato - Agência ideia tech 360</h2>
 
-        <!-- Condições Especiais -->
-        <?php require_once('conteudo/condicoes.php'); ?>
+            <form action="#" method="POST" class="animate__animated animate__wobble animate__delay-2s">
+                <div>
+                    <input type="text" name="nome" placeholder="Nome: " required>
+                    <input type="email" name="email" placeholder="E-mail: " required>
+                    <input type="tel" name="fone" placeholder="Telefone: " required>
+                </div>
+                <div>
+                    <textarea name="mens" placeholder="Mensagem: " cols="30" rows="10"></textarea>
+                    <input type="submit" value="Enviar E-mail">
+                </div>
+            </form>
+        </section>
 
-        <!-- Serviços -->
-        <?php require_once('conteudo/servico_cont.php'); ?>
         <!-- Galeria de Fotos -->
         <?php require_once('conteudo/galeria_cont.php'); ?>
-
-        <!-- DESENVOLVEDORES -->
-        <?php require_once('conteudo/dev.php'); ?>
-
-        <!-- Perguntas Frequentes -->
-        <?php require_once('conteudo/perguntas.php'); ?>
 
     </main>
 

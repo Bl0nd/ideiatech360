@@ -364,7 +364,7 @@ header h1 {
 
 /*#endregion condicoes*/
 
-/*#region servico*/
+/*#region serviço*/
 .servico {
     padding: 40px 0;
 }
@@ -455,6 +455,76 @@ header h1 {
 }
 
 /*#endregion galeria*/
+
+/* #region contato */
+.formulario {
+    padding-top: 80px;
+    background: #f28b0c;
+
+    h2 {
+        font-size: 1.5em;
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    form {
+        display: flex;
+        justify-content: space-around;
+
+
+        input,
+        textarea {
+            font-size: 1em;
+            color: #011826;
+            border: 0;
+            width: 90%;
+            margin: 7.5px 0;
+            padding: 20px 20px;
+            outline: none;
+        }
+
+        input:focus {
+            border: none;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #011826;
+            font-family: "Anton", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        textarea {
+            height: 195px;
+            resize: none;
+        }
+
+        input[type=submit] {
+            width: 34%;
+            border-radius: 15px;
+            background: #025159;
+            color: #f28b0c;
+            float: right;
+            font-size: 1em;
+            font-family: "Anton", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            padding: 5px 10px;
+            margin-right: -4px;
+            cursor: pointer;
+
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        input[type=submit]:hover {
+            color: #fff;
+        }
+    }
+}
+
+/* #endregion contato */
 
 /*#region dev*/
 .dev {
@@ -689,6 +759,24 @@ summary {
         line-height: 1.2em;
     }
 
+    /* Contato */
+    .formulario form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    input,
+    textarea {
+        font-size: 1.2em;
+        padding: 10px 20px;
+    }
+
+    input[type=submit] {
+        width: 15%;
+        padding: 2px 10px;
+        margin-right: 135px;
+    }
+
     /* Desenvolvedor */
     .dev>div>div>div {
         width: 44%;
@@ -889,6 +977,23 @@ summary {
         border-top-right-radius: 20px;
     }
 
+    /* Contato */
+    .formulario form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    input,
+    textarea {
+        font-size: 1.2em;
+        padding: 10px 20px;
+    }
+
+    input[type=submit] {
+        width: 15%;
+        margin-right: 36px;
+    }
+
     /* DEV */
     .dev h2 {
         font-size: 2.2em;
@@ -1071,6 +1176,23 @@ summary {
 
     .dev li a img {
         width: 25px;
+    }
+
+    /* Contato */
+    .formulario h2 {
+        font-size: 1em;
+    }
+
+    .formulario input,
+    .formulario textarea {
+        font-size: 1em;
+        width: 70%;
+        padding: 10px 15px;
+    }
+
+    input[type=submit] {
+        width: 30%;
+        margin-right: 10px;
     }
 
     /* PERGUNTAS FREQUENTES */

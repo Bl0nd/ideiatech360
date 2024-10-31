@@ -54,7 +54,7 @@
 
             </div>
 
-            <div class="boxform">
+            <div class="boxForm">
                 <form name="orcamento" method="post" class="animate__animated animate__wobble animate__delay-2s">
                     <h2>Faça seu Orçamento</h2>
                     <div>
