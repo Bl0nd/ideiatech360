@@ -7,13 +7,34 @@ require 'vedors/email/Exception.php';
 require 'vedors/email/PHPMailer.php';
 require 'vedors/email/SMTP.php';
 
+require 'admin/conexao.php';
+
 if (isset($_POST['nome'])) {
     $assunto = 'Ideia Tech 360';
     $nome = $_POST['nome'];
-    $email = $_POST['email'];
     $fone = $_POST['fone'];
+    $email = $_POST['email'];
     $mens = $_POST['mens'];
 
+    // INICIO BANCO DE DADOS
+    try {
+        $inserir = $conn->prepare("INSERT INTO tbl_contato(nome_contato, telefone_contato, email_contato, mensagem_contato, status_contato) VALUES(:nome, :telefone, :email, :mensagem, 'Aguardando')");
+        $inserir->bindParam(':nome' ,$nome);
+        $inserir->bindParam(':telefone' ,$fone);
+        $inserir->bindParam(':email' ,$email);
+        $inserir->bindParam(':mensagem' ,$mens);
+
+        if ($inserir->execute()) {
+            // echo "Dados inseridos com sucesso !";
+            //Redirecionar para a propria página
+            header("Location: contato.php");
+            exit();
+        } else {
+            echo "Erro ao inserir";
+        }
+    } catch (PDOException $e) {
+        echo "Erro: " . $e->getMessage();
+    }
 }
 
 ?>
