@@ -2,6 +2,7 @@
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
 
 require 'vedors/email/Exception.php';
 require 'vedors/email/PHPMailer.php';
@@ -17,26 +18,64 @@ if (isset($_POST['nome'])) {
     $mens = $_POST['mens'];
 
     // INICIO BANCO DE DADOS
-    try {
-        $inserir = $conn->prepare("INSERT INTO tbl_contato(nome_contato, telefone_contato, email_contato, mensagem_contato, status_contato) VALUES(:nome, :telefone, :email, :mensagem, 'Aguardando')");
-        $inserir->bindParam(':nome' ,$nome);
-        $inserir->bindParam(':telefone' ,$fone);
-        $inserir->bindParam(':email' ,$email);
-        $inserir->bindParam(':mensagem' ,$mens);
+    // try {
+    //     $inserir = $conn->prepare("INSERT INTO tbl_contato(nome_contato, telefone_contato, email_contato, mensagem_contato, status_contato) VALUES(:nome, :telefone, :email, :mensagem, 'Aguardando')");
+    //     $inserir->bindParam(':nome' ,$nome);
+    //     $inserir->bindParam(':telefone' ,$fone);
+    //     $inserir->bindParam(':email' ,$email);
+    //     $inserir->bindParam(':mensagem' ,$mens);
 
-        if ($inserir->execute()) {
-            // echo "Dados inseridos com sucesso !";
-            //Redirecionar para a propria página
-            header("Location: contato.php");
-            exit();
-        } else {
-            echo "Erro ao inserir";
-        }
-    } catch (PDOException $e) {
-        echo "Erro: " . $e->getMessage();
-    }
+    //     if ($inserir->execute()) {
+    //         // echo "Dados inseridos com sucesso !";
+    //         //Redirecionar para a propria página
+    //         header("Location: contato.php");
+    //         exit();
+    //     } else {
+    //         echo "Erro ao inserir";
+    //     }
+    // } catch (PDOException $e) {
+    //     echo "Erro: " . $e->getMessage();
+    // }
 }
 
+// INICIO DO PHPMailler
+//Create an instance; passing `true` enables exceptions
+$mail = new PHPMailer(true);
+
+try {
+    //Server settings
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // * Enable verbose debug output
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = 'smtp.hostinger.com';                   // * Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = 'innovaclicktipi02@smpsistema.com.br';  // * SMTP username
+    $mail->Password   = 'Senac@tipi02';                         // * SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+    //Recipients
+    $mail->setFrom('innovaclicktipi02@smpsistema.com.br', $assunto);
+    $mail->addAddress('feehloiira@gmail.com', 'Oi');     //Add a recipient
+    // $mail->addAddress('ellen@example.com');               //Name is optional
+    // $mail->addReplyTo('info@example.com', 'Information');
+    // $mail->addCC('cc@example.com');
+    // $mail->addBCC('bcc@example.com');
+
+    //Attachments
+    // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
+    // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+
+    //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->Subject = $assunto;
+    $mail->msgHTML("Nome: $nome <br>Email: $email <br>Telefone: $telefone <br>Mensagem: $mens");
+    $mail->AltBody = "Nome: $nome \n Email: $email \n Telefone: $telefone \n Mensagem: $mens";
+
+    $mail->send();
+    echo $nome . ', sua mensagem foi enviada';
+} catch (Exception $e) {
+    echo "Erro !: {$mail->ErrorInfo}";
+}
 ?>
 
 <!DOCTYPE html>
