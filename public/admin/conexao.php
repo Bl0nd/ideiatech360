@@ -6,7 +6,7 @@ $username = 'root'; //Nome do usuário do banco de dados
 $password = ''; //Senha do banco de dados
 
 try {
-    $conn = new PDO("mysql:host=$host;db=name=$dbname",$username,$password);
+    $conn = new PDO("mysql:host=$host;dbname=$dbname",$username,$password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } 
 catch(PDOException $e){

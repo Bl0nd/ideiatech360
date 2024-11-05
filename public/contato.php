@@ -1,5 +1,6 @@
 <?php
 $ok = 0;
+$okDb = 0;
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -19,24 +20,20 @@ if (isset($_POST['nome'])) {
     $mens = $_POST['mens'];
 
     // INICIO BANCO DE DADOS
-    // try {
-    //     $inserir = $conn->prepare("INSERT INTO tbl_contato(nome_contato, telefone_contato, email_contato, mensagem_contato, status_contato) VALUES(:nome, :telefone, :email, :mensagem, 'Aguardando')");
-    //     $inserir->bindParam(':nome' ,$nome);
-    //     $inserir->bindParam(':telefone' ,$fone);
-    //     $inserir->bindParam(':email' ,$email);
-    //     $inserir->bindParam(':mensagem' ,$mens);
+    try {
+        $inserir = $conn->prepare("INSERT INTO tbl_contato(nome_contato, telefone_contato, email_contato, mensagem_contato, status_contato) VALUES(:nome, :telefone, :email, :mensagem, 'Aguardando')");
+        $inserir->bindParam(':nome', $nome);
+        $inserir->bindParam(':telefone', $fone);
+        $inserir->bindParam(':email', $email);
+        $inserir->bindParam(':mensagem', $mens);
 
-    //     if ($inserir->execute()) {
-    //         // echo "Dados inseridos com sucesso !";
-    //         //Redirecionar para a propria página
-    //         header("Location: contato.php");
-    //         exit();
-    //     } else {
-    //         echo "Erro ao inserir";
-    //     }
-    // } catch (PDOException $e) {
-    //     echo "Erro: " . $e->getMessage();
-    // }
+        if (!$inserir->execute()) {
+            // echo "Erro ao inserir";
+            $okDb = 1;
+        } 
+    } catch (PDOException $e) {
+        echo "Erro: " . $e->getMessage();
+    }
 }
 
 // INICIO DO PHPMailler
@@ -45,7 +42,7 @@ $mail = new PHPMailer(true);
 
 try {
     //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // * Enable verbose debug output
+    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // * Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'smtp.hostinger.com';                   // * Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
@@ -122,7 +119,7 @@ try {
             <h2>Formulário de contato - Agência ideia tech 360</h2>
 
             <?php
-            if ($ok == 1) {
+            if ($ok == 1 && $okDb != 1) {
                 echo ("<h3> " . $nome . ", sua mensagem foi enviada com sucesso </h3>");
             } elseif ($ok == 2) {
                 echo ("<h3> " . $nome . ", não foi possivel enviar a sua mensagem. Tente mais tarde </h3>");
