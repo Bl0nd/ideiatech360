@@ -1,4 +1,5 @@
 <?php
+$ok = 0;
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -49,13 +50,13 @@ try {
     $mail->Host       = 'smtp.hostinger.com';                   // * Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
     $mail->Username   = 'innovaclicktipi02@smpsistema.com.br';  // * SMTP username
-    $mail->Password   = 'Senac@tipi02';                         // * SMTP password
+    $mail->Password   = '';                         // * SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
     $mail->setFrom('innovaclicktipi02@smpsistema.com.br', $assunto);
-    $mail->addAddress('feehloiira@gmail.com', 'Oi');     //Add a recipient
+    $mail->addAddress('', 'Oi');     //Add a recipient
     // $mail->addAddress('ellen@example.com');               //Name is optional
     // $mail->addReplyTo('info@example.com', 'Information');
     // $mail->addCC('cc@example.com');
@@ -72,9 +73,11 @@ try {
     $mail->AltBody = "Nome: $nome \n Email: $email \n Telefone: $telefone \n Mensagem: $mens";
 
     $mail->send();
-    echo $nome . ', sua mensagem foi enviada';
+    // echo $nome . ', sua mensagem foi enviada com sucesso';
+    $ok = 1;
 } catch (Exception $e) {
-    echo "Erro !: {$mail->ErrorInfo}";
+    // echo "Erro !: {$mail->ErrorInfo}";
+    $ok = 2;
 }
 ?>
 
@@ -117,6 +120,14 @@ try {
 
         <section class="site formulario">
             <h2>Formulário de contato - Agência ideia tech 360</h2>
+
+            <?php
+            if ($ok == 1) {
+                echo ("<h3> " . $nome . ", sua mensagem foi enviada com sucesso </h3>");
+            } elseif ($ok == 2) {
+                echo ("<h3> " . $nome . ", não foi possivel enviar a sua mensagem. Tente mais tarde </h3>");
+            }
+            ?>
 
             <form action="#" method="POST" class="animate__animated animate__wobble animate__delay-2s">
                 <div>
